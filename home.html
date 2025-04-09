@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="by.te - Agência especializada em soluções digitais para impulsionar seu negócio">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <title>by.te - Agência Digital</title>
+    <style>
+
+        html {
+        scroll-padding-top: 100px; /* valor semelhante à altura do header */
+        scroll-behavior: smooth;
+        }
+        /* Reset e Base */
+        :root {
+            --primary-color: #FFC857;
+            --text-color: #ffffff;
+            --bg-color: #000000;
+            --accent-blue: #4361ee;
+            --accent-purple: #7b2cbf;
+            --light-bg: #f8f9fa;
+            --dark-text: #212529;
+            --gray-text: #6c757d;
+            --medium-gray: #495057;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden;
+            min-height: 100vh;
+            text-rendering: optimizeSpeed;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 1px solid;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .visually-hidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+        
+        /* Header */
+        header {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: relative;
+        }
+ 
+                
+        .logo {
+            display: block;
+            text-decoration: none;
+        }
+        
+        .logo:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 3px;
+        }
+        
+        .logo img {
+            height: auto;
+            width: 120px;
+            display: block;
+        }
+
+        .services{
+            padding: 30px 0 20px 0;
+        }
+        
+        nav {
+            position: relative;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 40px;
+        }
+        
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            padding: 5px;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a:focus {
+            color: var(--primary-color);
+            outline: none;
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            padding: 5px;
+            position: absolute;
+            right: -5px;
+            z-index: 101;
+        }
+        
+        .menu-toggle:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 3px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 60px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            background-blend-mode: overlay;
+            overflow: hidden;
+        }
+        
+        /* Imagem de fundo responsiva */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('banner.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: brightness(1.4);
+        }
+        
+        /* Versão mobile da imagem de fundo */
+        @media (max-width: 768px) {
+            .hero::before {
+                background-image: url('/api/placeholder/800/1200');
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            line-height: 1.2;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 850px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .services-list {
+            font-size: 1.25rem;
+            margin: 0 auto 40px;
+            color: var(--text-color);
+            padding: 0 20px;
+            line-height: 1.6;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover,
+        .cta-btn:focus {
+            background-color: #e6b43e;
+            transform: translateY(-3px);
+            outline: none;
+        }
+        
+        /* Seção Quem Somos */
+        .about-section {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            padding: 130px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cstyle%3E .text %7B font: bold 30px sans-serif; fill: rgba(0,0,0,0.05); %7D %3C/style%3E%3Ctext x='0' y='30' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='70' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='110' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='150' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='190' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='230' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='270' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='310' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='350' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='390' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3C/svg%3E");
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 0 20px;
+            z-index: 1;
+        }
+        
+        .about-text {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            position: relative;
+            margin-bottom: 4rem;
+        }
+        
+        .about-section h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-right: 20px;
+            flex: 0 0 200px;
+        }
+        
+        .arrow-icon {
+            font-size: 4rem;
+            margin: 10px 30px 0 0;
+            line-height: 1;
+            transform: rotate(0deg);
+            flex: 0 0 50px;
+        }
+        
+        .about-description {
+            flex: 1;
+            max-width: 800px;
+        }
+        
+        .about-description p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .about-description p:last-of-type {
+            margin-bottom: 30px;
+        }
+        
+        .slogan {
+            font-style: italic;
+            font-weight: 600;
+            font-size: 1.3rem !important;
+            margin-top: 10px;
+            margin-bottom: 40px !important;
+        }
+        
+        /* Tecnologias */
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0 40px;
+        }
+        
+        .tech-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .tech-icon img {
+            margin-bottom: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .tech-icon:hover img {
+            transform: translateY(-5px);
+        }
+        
+        .tech-icon span {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* CTA */
+        .cta-container {
+            background-color: var(--bg-color);
+            width: 100%;
+            padding: 30px 0;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .cta-btn-dark {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .cta-btn-dark:hover,
+        .cta-btn-dark:focus {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            transform: translateY(-3px);
+            outline: none;
+        }
+        
+/* Menu Hambúrguer Responsivo */
+.header-cta {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 8px 40px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: -10px -6px 0px 30px;
+}
+
+.header-cta:hover,
+.header-cta:focus {
+    background-color: #e6b43e;
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Menu overlay para cobrir a tela quando o menu está aberto */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+
+/* Correção do menu hambúrguer mobile */
+@media (max-width: 992px) {
+    header {
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header-cta{
+        margin: 0;
+        font-size: 1.2rem;
+    }
+    
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+    
+    nav {
+        position: static;
+    }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 40%;  /* Alterado para ocupar 40% da tela */
+        height: 100vh;
+        background-color: var(--dark-text);
+        z-index: 1000;
+        padding: 80px 20px 20px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: auto;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+    }
+    
+    nav ul.active {
+        display: flex;
+        transform: translateX(0);
+    }
+    
+    nav ul li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 10px;
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    nav ul {
+        width: 50%;  /* Para telas muito pequenas, aumentamos um pouco para melhor usabilidade */
+    }
+    
+    .header-cta {
+        padding: 6px 16px;
+        font-size: 1rem;
+    }
+}
+
+/* Título Principal Responsivo */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero p {
+        font-size: 1.3rem;
+    }
+    
+    .services {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+    
+    .services {
+        font-size: 0.8rem;
+    }
+    
+    .cta-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .about-section h2 {
+    flex: 0 0 100%;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+  }
+
+  .about-description {
+    flex: 0 0 100%;
+  }
+
+  .arrow-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .services {
+        font-size: 0.7rem;
+    }
+}
+
+  /* Serviços */
+.services-section {
+    background-color: var(--bg-color); /* Mudado para preto para manter consistência */
+    position: relative;
+    overflow: hidden;
+    color: var(--text-color); /* Alterado para cor do texto padrão (branco) */
+    margin-bottom: 5rem;
+}
+
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cstyle%3E .text %7B font: bold 30px sans-serif; fill: rgba(255,255,255,0.03); %7D %3C/style%3E%3Ctext x='0' y='30' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='70' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='110' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='150' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='190' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='230' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='270' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='310' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='350' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='390' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3C/svg%3E");
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.services-section::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(255, 200, 87, 0.1) 100%); /* Ajustado para tons de preto e amarelo */
+    bottom: -50px;
+    right: -50px;
+    z-index: 0;
+}
+
+.section-header {
+    text-align: center;
+    margin: 80px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-color); /* Alterado para amarelo */
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color); /* Alterado para amarelo sólido */
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.service-container {
+    margin-bottom: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.service-container:last-child {
+    margin-bottom: 0;
+}
+
+.service-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #121212; /* Cor de fundo escura para manter contraste */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+}
+
+.service-wrapper:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.service-image {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+}
+
+.service-image img {
+    width: 90%;
+    height: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.service-wrapper:hover .service-image img {
+    transform: scale(1.1);
+}
+
+.service-content {
+    flex: 0 0 50%;
+    padding: 60px;
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background: rgba(255, 200, 87, 0.1); /* Ajustado para tom de amarelo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.service-wrapper:hover .service-icon {
+    background: var(--primary-color); /* Alterado para amarelo sólido */
+}
+
+.service-icon i {
+    font-size: 32px;
+    color: var(--primary-color); /* Alterado para amarelo */
+    transition: all 0.3s ease;
+}
+
+.service-wrapper:hover .service-icon i {
+    color: var(--bg-color); /* Alterado para preto */
+}
+
+.service-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--primary-color); /* Alterado para amarelo */
+}
+
+.service-content p {
+    font-size: 1.1rem;
+    color: var(--text-color); /* Alterado para branco */
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.service-features {
+    margin-bottom: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.feature-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 200, 87, 0.2); /* Ajustado para tom de amarelo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.feature-icon i {
+    font-size: 14px;
+    color: var(--primary-color); /* Alterado para amarelo */
+}
+
+.feature-text {
+    font-size: 1rem;
+    color: #e0e0e0; /* Cinza claro para melhor legibilidade */
+    font-weight: 500;
+}
+
+.service-cta {
+    display: inline-block;
+    background: var(--primary-color); /* Alterado para amarelo */
+    color: var(--bg-color); /* Texto preto */
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.service-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Efeito de brilho sutil */
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.service-cta:hover::before {
+    width: 100%;
+}
+
+.service-container:nth-child(even) .service-wrapper {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 992px) {
+    .service-image img {
+    width: 100%;
+    }
+    .service-wrapper {
+        flex-direction: column !important;
+    }
+    
+    .service-image {
+        flex: 0 0 100%;
+        height: 300px;
+    }
+    
+    .service-content {
+        flex: 0 0 100%;
+        padding: 40px 30px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .section-header p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nossos-cases{
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    }
+    .section-header {
+        margin: 60px 0;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-header p {
+        font-size: 1rem;
+    }
+    
+    .service-container {
+        margin-bottom: 60px;
+    }
+    
+    .service-image {
+        height: 250px;
+    }
+    
+    .service-content {
+        padding: 30px 20px;
+    }
+    
+    .service-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .service-content p {
+        font-size: 1rem;
+    }
+    
+    .feature-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .service-image {
+        height: 200px;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .service-icon i {
+        font-size: 24px;
+    }
+    
+    .service-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .service-cta {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilos para a seção Nossos Cases - Reajustados */
+
+.cases-description {
+    flex: 1;
+    max-width: 800px;
+    margin-top: 10px;
+}
+
+.cases-description p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.case-card {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #121212;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.case-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.case-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.case-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 30px 20px 20px;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.case-card:hover .case-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.case-overlay h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.case-overlay p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.case-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.case-link:hover {
+    transform: translateY(-3px);
+    background-color: #e6b43e;
+}
+
+/* CTA para seção cases */
+.cases-cta-container {
+    background-color: var(--bg-color);
+    width: 100%;
+    padding: 30px 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* Ajuste para a seção de clientes */
+/* Correção para a seção de clientes - Seguindo o padrão da seção "Quem Somos" */
+.clients-section {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 100px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.clients-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cstyle%3E .text %7B font: bold 30px sans-serif; fill: rgba(0,0,0,0.05); %7D %3C/style%3E%3Ctext x='0' y='30' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='70' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='110' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='150' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='190' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='230' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='270' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='310' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='350' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='390' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3C/svg%3E");
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.contato-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cstyle%3E .text %7B font: bold 30px sans-serif; fill: rgba(0,0,0,0.05); %7D %3C/style%3E%3Ctext x='0' y='30' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='70' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='110' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='150' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='190' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='230' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='270' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='310' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='350' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='390' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3C/svg%3E");
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.clients-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.clients-text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    position: relative;
+}
+
+.clients-section h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-right: 20px;
+    flex: 0 0 200px;
+}
+
+.arrow-icon {
+    font-size: 4rem;
+    margin: 10px 30px 0 0;
+    line-height: 1;
+    transform: rotate(0deg);
+    flex: 0 0 50px;
+}
+
+.clients-description {
+    flex: 1;
+    max-width: 800px;
+}
+
+.clients-description p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.clients-description p:last-of-type {
+    margin-bottom: 30px;
+}
+
+/* Frase de destaque dos clientes - Similar ao slogan da seção "Quem Somos" */
+.clients-slogan {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.3rem !important;
+    margin-top: 10px;
+    margin-bottom: 40px !important;
+}
+
+/* Grid de cases de clientes */
+
+.clients-cases {
+    padding-top: 3rem;
+    margin: auto;
+}
+.clients-cases h4 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.nossos-cases{
+    padding-bottom: 65px;
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.case-card {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #121212;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.case-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.case-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.case-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 30px 20px 20px;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.case-card:hover .case-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.case-overlay h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.case-overlay p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.case-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.case-link:hover {
+    transform: translateY(-3px);
+    background-color: #e6b43e;
+}
+
+/* CTA para seção clientes */
+.clients-cta-container {
+    width: 100%;
+    padding: 30px 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.client-btn {
+    display: inline-block;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.client-btn:hover,
+.client-btn:focus {
+    transform: translateY(-3px);
+    outline: none;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 992px) {
+    .clients-section h2 {
+        flex: 0 0 180px;
+        font-size: 3rem;
+    }
+    
+    .cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .clients-section h2 {
+        flex: 0 0 100%;
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .arrow-icon {
+        display: none;
+    }
+    
+    .clients-description {
+        flex: 0 0 100%;
+    }
+    
+    .cases-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Botão de voltar ao topo */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg-color);
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    background-color: #ffffff;
+}
+
+/* Acessibilidade */
+.scroll-to-top:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* Para dispositivos móveis */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.2rem;
+    }
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: var(--gray-text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 0;
+  top: 100%;
+  left: 0;
+  min-width: 270px;
+  z-index: 999;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--primary-color);
+}
+
+.dropdown-menu li a i {
+  margin-right: 10px;
+  color: var(--primary-color);
+  width: 20px;
+  text-align: center;
+}
+
+/* Mostrar menu ao passar o mouse */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+/* Contatos */
+
+.contact-section {
+  background-color: #D1CCCA;
+  color: var(--bg-color);
+  padding: 0px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.contact-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-section .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-section .section-header h2 {
+  font-size: 2.8rem;
+  color: var(--bg-color);
+  margin-bottom: 15px;
+}
+
+.contact-section .section-header p {
+  font-size: 1.2rem;
+  color: var(--bg-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-form .form-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 18px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fff;
+  font-size: 1rem;
+  color: var(--medium-gray);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #777;
+}
+
+.contact-form button.cta-btn {
+  align-self: flex-start;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button.cta-btn:hover {
+  background-color: #121212;
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-form .form-group {
+    flex-direction: column;
+  }
+
+  .contact-form button.cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-section .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .contact-section .section-header p {
+    font-size: 1rem;
+  }
+}
+
+
+/* === FOOTER === */
+.site-footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-brand img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+}
+
+.footer-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--primary-color);
+}
+
+.footer-social a {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: translateY(-4px);
+}
+
+/* Botão de voltar ao topo */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg-color);
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    background-color: #ffffff;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-form .form-group {
+        flex-direction: column;
+    }
+
+    .contact-form button.cta-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .footer-social {
+        margin-top: 20px;
+    }
+    
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.2rem;
+    }
+}
+
+.fa-chevron-down{
+    color: var(--primary-color);
+}
+
+    </style>
+</head>
+<body>
+
+    
+
+    <div class="container">
+        <header>
+            <a href="#" class="logo" aria-label="By.te - Página inicial">
+                <img src="/Byte.png" alt="by.te logo" width="120" height="40">
+            </a>
+            <div class="header-right">
+                <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu de navegação">
+                    ☰
+                </button>
+            </div>
+            <nav aria-label="Menu principal">
+                <ul id="menu">
+                    <li><a href="#about-section">Quem Somos</a></li>
+                    <li class="dropdown">
+                        <a href="#servicos">Serviços <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#servico-web"><i class="fas fa-code"></i> Desenvolvimento</a></li>
+                          <li><a href="#servico-social"><i class="fas fa-hashtag"></i> Social Media</a></li>
+                          <li><a href="#servico-ads"><i class="fas fa-ad"></i> ADS</a></li>
+                          <li><a href="#servico-estrategia"><i class="fas fa-chart-line"></i> Estratégia Digital</a></li>
+                          <li><a href="#servico-dashboards"><i class="fas fa-chart-pie"></i> Dashboards</a></li>
+                        </ul>
+                      </li>
+                      
+                    <li><a href="#clientes">Clientes</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <a href="#contato" class="header-cta">Fale conosco</a>
+
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <!-- Botão para voltar ao topo -->
+    <div class="scroll-to-top" id="scrollToTop" role="button" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </div>
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Conectando ideias, criando resultados.</h1>
+                <p>CRIAMOS SOLUÇÕES DIGITAIS PARA IMPULSIONAR SEU NEGÓCIO.</p>
+                <div class="services" aria-label="Nossos serviços">
+                    DESENVOLVIMENTO DE SITES <span class="pipe-separator" aria-hidden="true">|</span> SOCIAL MEDIA <span class="pipe-separator" aria-hidden="true">|</span> ADS <span class="pipe-separator" aria-hidden="true">|</span> ESTRATÉGIA DIGITAL<span class="pipe-separator" aria-hidden="true">|</span> DASHBOARDS PERSONALIZADOS
+                </div>
+               <a href="#" class="cta-btn" role="button">Fale com nossos especialistas</a> 
+               
+            </div>
+        </section>
+
+
+        <!-- Seção Quem Somos -->
+        <section class="about-section">
+            <div class="about-background"></div>
+            <div class="container about-content">
+                <div class="about-text">
+                    <div class="quem-somos">
+                        <h2>QUEM<br>SOMOS</h2>
+                        <div class="arrow-icon">&#x2197;</div>
+                    </div>
+                    <div class="about-description">
+                        <p>A <strong>by.te</strong> surgiu da paixão de dois amigos por inovar no digital. Somos uma agência que vai além do marketing: criamos <strong>soluções sob medida</strong>, em parceria com os clientes, para gerar <strong>resultados reais</strong>. Aqui, o sucesso vem da colaboração, da escuta ativa e do foco absoluto na excelência.</p>
+                        
+                        <p>Oferecemos soluções estratégicas em marketing, desenvolvidas em cocriação para garantir alinhamento total com seus objetivos de negócio. Nossa metodologia combina expertise técnica e abordagem colaborativa, entregando performance e relacionamentos de longo prazo.</p>
+                        
+                        <p class="slogan">Resultados reais começam com parcerias reais.</p>
+                        
+                        <div class="tech-icons">
+                            <div class="tech-icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Ads" width="60" height="60">
+                              <span>Google Ads</span>
+                            </div>
+                            <div class="tech-icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="60" height="60">
+                              <span>HTML5</span>
+                            </div>
+                            <div class="tech-icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="60" height="60">
+                              <span>CSS3</span>
+                            </div>
+                            <div class="tech-icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="60" height="60">
+                              <span>JavaScript</span>
+                            </div>
+                            <div class="tech-icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress" width="60" height="60">
+                              <span>WordPress</span>
+                            </div>
+                            <div class="tech-icon">
+                              <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="SEO" width="60" height="60">
+                              <span>SEO</span>
+                            </div>
+                            <div class="tech-icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Cloud" width="60" height="60">
+                              <span>Cloud</span>
+                            </div>
+                            
+                          </div>
+                          
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="cta-container">
+                <div class="container">
+                    <a href="#" class="cta-btn-dark" role="button">Fale com nossos especialistas</a>
+                </div>
+            </div> -->
+        </section>
+
+        <!-- Seção de Serviços -->
+
+        <section class="services services-section" id="servicos">
+            <div class="container">
+                <div class="section-header">
+                    <h2>TRANSFORME SUA PRESENÇA DIGITAL</h2>
+                    <p>Soluções completas para empresas que querem conquistar o mundo digital</p>
+                </div>
+                
+                <!-- Serviço 1: Desenvolvimento Web -->
+                <div class="service-container"  id="servico-web">
+                    <div class="service-wrapper">
+                        <div class="service-image">
+                            <img src="https://img.freepik.com/fotos-gratis/web-design-online_53876-95309.jpg?t=st=1743800236~exp=1743803836~hmac=4ccc9c75b12edb9da034f79e2f107340332526920e31f951e59bc55147b1ae3d&w=996" alt="Desenvolvimento Web Profissional">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Desenvolvimento Web</h3>
+                            <p>Construímos a presença online que seu negócio merece, com sites responsivos, modernos e otimizados para performance e conversão.</p>
+                            <div class="service-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Sites Institucionais</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">E-commerce Completo</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Landing Pages Otimizadas para Conversão</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Aplicações Web Personalizadas</div>
+                                </div>
+                            </div>
+                            <a href="#contato" class="service-cta">Quero um site profissional</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Serviço 2: Social Media -->
+                <div class="service-container"  id="servico-social">
+                    <div class="service-wrapper">
+                        <div class="service-image">
+                            <img src="/api/placeholder/600/500" alt="Gestão de Redes Sociais">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-hashtag"></i>
+                            </div>
+                            <h3>Social Media</h3>
+                            <p>Gerenciamos suas redes sociais com estratégias personalizadas que constroem relacionamento com seu público e geram engajamento real.</p>
+                            <div class="service-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Planejamento de Conteúdo Estratégico</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Criação de Posts Atrativos</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Gestão de Comunidade</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Relatórios de Performance</div>
+                                </div>
+                            </div>
+                            <a href="#contato" class="service-cta">Quero destacar nas redes sociais</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Serviço 3: ADS -->
+                <div class="service-container"  id="servico-ads">
+                    <div class="service-wrapper">
+                        <div class="service-image">
+                            <img src="/api/placeholder/600/500" alt="Campanhas de Publicidade Digital">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-ad"></i>
+                            </div>
+                            <h3>ADS</h3>
+                            <p>Campanhas publicitárias estratégicas que impulsionam seu negócio, atraem clientes qualificados e maximizam o retorno sobre seu investimento.</p>
+                            <div class="service-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Google Ads (Search, Display, YouTube)</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Facebook & Instagram Ads</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">LinkedIn Ads para B2B</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Campanhas de Remarketing</div>
+                                </div>
+                            </div>
+                            <a href="#contato" class="service-cta">Quero atrair mais clientes</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Serviço 4: Estratégia Digital -->
+                <div class="service-container" id="servico-estrategia">
+                    <div class="service-wrapper">
+                        <div class="service-image">
+                            <img src="/api/placeholder/600/500" alt="Estratégia Digital Completa">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Estratégia Digital</h3>
+                            <p>Desenvolvemos planos estratégicos baseados em dados que posicionam sua marca no mundo digital e garantem o crescimento sustentável do seu negócio.</p>
+                            <div class="service-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Consultoria Digital Personalizada</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Otimização para Motores de Busca (SEO)</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Estratégias de Inbound Marketing</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="feature-text">Análise de Dados e Métricas</div>
+                                </div>
+                            </div>
+                            <a href="#contato" class="service-cta">Quero uma estratégia completa</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Serviço 5: Dashboards Personalizados -->
+                <div class="service-container" id="servico-dashboards">
+                    <div class="service-wrapper">
+                    <div class="service-image">
+                        <img src="https://img.freepik.com/fotos-gratis/grafico-do-dashboards-analitico_53876-146144.jpg" alt="Dashboards Personalizados para Empresas">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Dashboards Personalizados</h3>
+                        <p>Transformamos dados em decisões estratégicas com painéis visuais e intuitivos, feitos sob medida para seu negócio.</p>
+                        <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                            </div>
+                            <div class="feature-text">Indicadores de Performance (KPIs)</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                            </div>
+                            <div class="feature-text">Dashboards para o seu negócio</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                            </div>
+                            <div class="feature-text">Integração com base de dados</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                            <i class="fas fa-check"></i>
+                            </div>
+                            <div class="feature-text">Análises Visuais para Tomada de Decisão</div>
+                        </div>
+                        </div>
+                        <a href="#contato" class="service-cta">Quero um dashboard para minha empresa</a>
+                    </div>
+                    </div>
+                </div>
+  
+
+                
+
+
+  
+            </div>
+        </section>
+
+    
+<!-- Seção Clientes com Cases integrados -->
+<section class="clients-section" id="clientes">
+    <div class="clients-background"></div>
+    <div class="container clients-content">
+        <div class="clients-text">
+            <div class="quem-somos">
+                <h2>CLIENTES</h2>
+                <div class="arrow-icon">&#x2197;</div>
+            </div>
+            <div class="clients-description">
+                <p>Seja para <strong>expandir mercados</strong>, <strong>escalar vendas</strong> ou <strong>revolucionar experiências digitais</strong>, estamos lado a lado com quem ousa inovar.</p>
+                
+                <p>Seu negócio também pode fazer parte dessa jornada.</p>
+                
+                <p class="clients-slogan">Clientes que inspiram, resultados que falam por si!</p>
+
+                <div class="clients-cta-container">
+                    <div class="container">
+                        <a href="#contato" class="client-btn">Vamos conversar?</a>
+                    </div>
+                </div>
+                    
+                
+                
+            </div>
+
+
+            <div class="nossos-cases">
+            <div class="clients-cases">
+                <h4>Nossos Cases</h4>
+            </div>
+            
+            <div class="cases-grid">
+                <!-- Case 1 -->
+                <div class="case-card">
+                    <img src="/api/placeholder/400/300" alt="E-commerce Fashion Store" class="case-logo">
+                    <div class="case-overlay">
+                        <h3>Fashion Store</h3>
+                        <p>Desenvolvimento de e-commerce completo com integração de pagamentos e logística.</p>
+                        <a href="#" class="case-link">Ver projeto</a>
+                    </div>
+                </div>
+                
+                <!-- Case 2 -->
+                <div class="case-card">
+                    <img src="/api/placeholder/400/300" alt="Campanha Digital TechSolutions" class="case-logo">
+                    <div class="case-overlay">
+                        <h3>TechSolutions</h3>
+                        <p>Estratégia de marketing digital que aumentou leads qualificados em 150%.</p>
+                        <a href="#" class="case-link">Ver projeto</a>
+                    </div>
+                </div>
+                
+                <!-- Case 3 -->
+                <div class="case-card">
+                    <img src="/api/placeholder/400/300" alt="Redes Sociais FoodDelivery" class="case-logo">
+                    <div class="case-overlay">
+                        <h3>FoodDelivery</h3>
+                        <p>Gestão de redes sociais com crescimento de 200% em engajamento orgânico.</p>
+                        <a href="#" class="case-link">Ver projeto</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+   
+</div>
+
+</section>
+
+<section id="contato" class="contact-section">
+    <div class="contato-background"></div>
+    <div class="container">
+      <div class="section-header">
+        <h2>FALE COM A GENTE</h2>
+        <p>Vamos criar juntos a próxima grande solução digital para o seu negócio.</p>
+      </div>
+  
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <input type="text" name="nome" placeholder="Seu nome" required>
+          <input type="email" name="email" placeholder="Seu e-mail" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" name="telefone" placeholder="Telefone (opcional)">
+          <input type="text" name="empresa" placeholder="Empresa (opcional)">
+        </div>
+        <textarea name="mensagem" rows="5" placeholder="Como podemos te ajudar?" required></textarea>
+        <button type="submit" class="cta-btn">Enviar mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="Byte.png " alt="Logo by.te" width="120" >
+        <p>&copy; 2025 by.te - Todos os direitos reservados</p>
+      </div>
+  
+      <div class="footer-nav">
+        <a href="#about-section">Quem Somos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#contato">Contato</a>
+      </div>
+  
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+  
+
+        
+
+      
+   
+   
+
+    </main>
+
+    
+    <script>
+        // Menu Toggle Functionality with improved accessibility
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !expanded);
+            menu.classList.toggle('active');
+            menuToggle.innerHTML = expanded ? '☰' : '✕';
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.innerHTML = '☰';
+            });
+        });
+        
+        // Close menu when pressing Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.innerHTML = '☰';
+                menuToggle.focus();
+            }
+        });
+        
+        // Improve performance with responsive images by preloading
+        document.addEventListener('DOMContentLoaded', () => {
+            // Detect screen size and preload appropriate background
+            const preloadBackgroundImage = () => {
+                const isMobile = window.innerWidth <= 768;
+                const imageUrl = isMobile ? '/api/placeholder/800/1200' : '/api/placeholder/1600/900';
+                
+                const preloadLink = document.createElement('link');
+                preloadLink.rel = 'preload';
+                preloadLink.as = 'image';
+                preloadLink.href = imageUrl;
+                document.head.appendChild(preloadLink);
+            };
+            
+            preloadBackgroundImage();
+            
+            // Passive event listeners for better performance
+            const passiveSupported = () => {
+                let passive = false;
+                try {
+                    const options = Object.defineProperty({}, 'passive', {
+                        get: function() { passive = true; return true; }
+                    });
+                    window.addEventListener('test', null, options);
+                    window.removeEventListener('test', null, options);
+                } catch (err) {}
+                return passive;
+            };
+            
+            const wheelOpt = passiveSupported() ? { passive: true } : false;
+            const wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+            
+            document.addEventListener(wheelEvent, () => {}, wheelOpt);
+            document.addEventListener('touchstart', () => {}, wheelOpt);
+        });
+
+
+        // Funcionalidade de scroll para o topo
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollToTopButton = document.getElementById('scrollToTop');
+    
+    // Mostrar ou esconder o botão baseado na posição do scroll
+    function toggleScrollButton() {
+        if (window.pageYOffset > 300) {
+            scrollToTopButton.classList.add('show');
+        } else {
+            scrollToTopButton.classList.remove('show');
+        }
+    }
+    
+    // Adiciona evento de scroll para mostrar/esconder o botão
+    window.addEventListener('scroll', toggleScrollButton);
+    
+    // Função para rolar suavemente até o topo
+    scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Adicionar suporte para navegação por teclado
+    scrollToTopButton.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    });
+    
+    // Tornar o botão focável por teclado
+    scrollToTopButton.setAttribute('tabindex', '0');
+});
+
+    </script>
+</body>
+</html>
