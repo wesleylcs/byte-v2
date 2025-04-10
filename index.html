@@ -6,10 +6,30 @@
     <meta name="description" content="by.te - Agência especializada em soluções digitais para impulsionar seu negócio">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Byte.png">
+
 
 
     <title>by.te - Agência Digital</title>
     <style>
+
+        @font-face {
+        font-family: 'Glock Grotesque';
+        src: url('GlockGrotesque-Medium.woff2') format('woff2'),
+            url('GlockGrotesque-Medium.woff') format('woff'),
+            url('GlockGrotesque-Medium.eot'); /* fallback */
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+        }
+
+        body {
+        font-family: 'Glock Grotesque', sans-serif;
+        }
+
+        h1, h2{
+            font-family: 'Glock Grotesque';
+        }
 
         html {
         scroll-padding-top: 100px; /* valor semelhante à altura do header */
@@ -86,7 +106,7 @@
         
         .logo img {
             height: auto;
-            width: 120px;
+            width: 90px;
             display: block;
         }
 
@@ -143,7 +163,7 @@
         
         /* Hero Section */
         .hero {
-            min-height: 90vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -168,7 +188,7 @@
             background-size: cover;
             background-position: center;
             z-index: -1;
-            filter: brightness(1.4);
+            filter: brightness(0.9);
         }
         
         /* Versão mobile da imagem de fundo */
@@ -184,7 +204,7 @@
         }
         
         .hero h1 {
-            font-size: 3.1rem;
+            font-size: 2.4rem;
             font-weight: 700;
             margin-bottom: 10px;
             color: var(--primary-color);
@@ -192,6 +212,7 @@
             line-height: 1.2;
             width: 100%;
             text-align: center;
+            font-family: 'Glock Grotesque';
         }
         
         .hero p {
@@ -270,11 +291,12 @@
         }
         
         .about-section h2 {
-            font-size: 3.5rem;
+            font-size: 2.9rem;
             font-weight: 700;
             text-transform: uppercase;
             line-height: 1;
-            margin-right: 20px;
+            margin: 20px 20px 0 0;
+            font-family: 'Glock Grotesque';
             flex: 0 0 200px;
         }
         
@@ -424,9 +446,17 @@
         justify-content: space-between;
     }
 
+    .fa-chevron-down{
+        display: none !important;
+    }
+
     .header-cta{
         margin: 0;
         font-size: 1.2rem;
+    }
+
+    .about-section{
+        padding: 70px 0 0;
     }
     
     .menu-toggle {
@@ -484,6 +514,10 @@
         padding: 6px 16px;
         font-size: 1rem;
     }
+
+    .logo img {
+        width: 80px;
+    }
 }
 
 /* Título Principal Responsivo */
@@ -517,12 +551,12 @@
     
     .cta-btn {
         padding: 12px 25px;
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .about-section h2 {
     flex: 0 0 100%;
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
   }
 
@@ -537,7 +571,7 @@
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     
     .hero p {
@@ -546,7 +580,7 @@
     }
     
     .services {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -567,7 +601,6 @@
     width: 100%;
     height: 100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cstyle%3E .text %7B font: bold 30px sans-serif; fill: rgba(255,255,255,0.03); %7D %3C/style%3E%3Ctext x='0' y='30' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='70' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='110' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='150' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='190' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='230' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='270' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='310' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3Ctext x='0' y='350' class='text'%3E0 1 0 1 0 1 0 1 0 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='390' class='text'%3E1 0 1 0 1 0 1 0 1 0 1 0 1 0%3C/text%3E%3C/svg%3E");
-    opacity: 0.7;
     pointer-events: none;
     z-index: 0;
 }
@@ -592,12 +625,13 @@
 }
 
 .section-header h2 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: var(--primary-color); /* Alterado para amarelo */
+    color: var(--primary-color);
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
+    font-family: 'Glock Grotesque';
 }
 
 .section-header h2::after {
@@ -1027,12 +1061,13 @@
 }
 
 .clients-section h2 {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1;
-    margin-right: 20px;
+    margin: 20px 20px 0 0;
     flex: 0 0 200px;
+    font-family: 'Glock Grotesque';
 }
 
 .arrow-icon {
@@ -1077,6 +1112,7 @@
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 30px;
+    font-family: 'Glock Grotesque';
 }
 
 .nossos-cases{
@@ -1193,7 +1229,7 @@
 @media (max-width: 992px) {
     .clients-section h2 {
         flex: 0 0 180px;
-        font-size: 3rem;
+        font-size: 2.2rem;
     }
     
     .cases-grid {
@@ -1204,7 +1240,7 @@
 @media (max-width: 768px) {
     .clients-section h2 {
         flex: 0 0 100%;
-        font-size: 2.8rem;
+        font-size: 1.8rem;
         margin-bottom: 20px;
     }
     
@@ -1591,7 +1627,7 @@
                 <h1>Conectando ideias, criando resultados.</h1>
                 <p>CRIAMOS SOLUÇÕES DIGITAIS PARA IMPULSIONAR SEU NEGÓCIO.</p>
                 <div class="services" aria-label="Nossos serviços">
-                    DESENVOLVIMENTO DE SITES <span class="pipe-separator" aria-hidden="true">|</span> SOCIAL MEDIA <span class="pipe-separator" aria-hidden="true">|</span> ADS <span class="pipe-separator" aria-hidden="true">|</span> ESTRATÉGIA DIGITAL<span class="pipe-separator" aria-hidden="true">|</span> DASHBOARDS PERSONALIZADOS
+                    DESENVOLVIMENTO DE SITES <span class="pipe-separator" aria-hidden="true">-</span> SOCIAL MEDIA <span class="pipe-separator" aria-hidden="true">-</span> ADS <span class="pipe-separator" aria-hidden="true">-</span> ESTRATÉGIA DIGITAL<span class="pipe-separator" aria-hidden="true">-</span> DASHBOARDS PERSONALIZADOS
                 </div>
                <a href="#" class="cta-btn" role="button">Fale com nossos especialistas</a> 
                
@@ -1616,10 +1652,7 @@
                         <p class="slogan">Resultados reais começam com parcerias reais.</p>
                         
                         <div class="tech-icons">
-                            <div class="tech-icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Ads" width="60" height="60">
-                              <span>Google Ads</span>
-                            </div>
+                           
                             <div class="tech-icon">
                               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="60" height="60">
                               <span>HTML5</span>
@@ -1644,6 +1677,10 @@
                               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Cloud" width="60" height="60">
                               <span>Cloud</span>
                             </div>
+                            <div class="tech-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Ads" width="60" height="60">
+                                <span>Google Ads</span>
+                              </div>
                             
                           </div>
                           
@@ -1713,7 +1750,7 @@
                 <div class="service-container"  id="servico-social">
                     <div class="service-wrapper">
                         <div class="service-image">
-                            <img src="/api/placeholder/600/500" alt="Gestão de Redes Sociais">
+                            <img src="redes-sociais.jpg" style="margin-left: 3rem;" alt="Gestão de Redes Sociais">
                         </div>
                         <div class="service-content">
                             <div class="service-icon">
@@ -1756,7 +1793,7 @@
                 <div class="service-container"  id="servico-ads">
                     <div class="service-wrapper">
                         <div class="service-image">
-                            <img src="/api/placeholder/600/500" alt="Campanhas de Publicidade Digital">
+                            <img src="redes-sociais.jpg" alt="Campanhas de Publicidade Digital">
                         </div>
                         <div class="service-content">
                             <div class="service-icon">
@@ -1799,7 +1836,7 @@
                 <div class="service-container" id="servico-estrategia">
                     <div class="service-wrapper">
                         <div class="service-image">
-                            <img src="/api/placeholder/600/500" alt="Estratégia Digital Completa">
+                            <img src="redes-sociais.jpg" style="margin-left: 3rem;" alt="Estratégia Digital Completa">
                         </div>
                         <div class="service-content">
                             <div class="service-icon">
@@ -1842,7 +1879,7 @@
                 <div class="service-container" id="servico-dashboards">
                     <div class="service-wrapper">
                     <div class="service-image">
-                        <img src="https://img.freepik.com/fotos-gratis/grafico-do-dashboards-analitico_53876-146144.jpg" alt="Dashboards Personalizados para Empresas">
+                        <img src="https://img.freepik.com/vetores-gratis/painel-do-usuario-do-painel-de-negocios_52683-26695.jpg?t=st=1744254492~exp=1744258092~hmac=cca324a89f13584c0e1c50b067686dd7f558b45369269c736b3402f048a9ae26&w=996" alt="Dashboards Personalizados para Empresas">
                     </div>
                     <div class="service-content">
                         <div class="service-icon">
@@ -1925,19 +1962,19 @@
             <div class="cases-grid">
                 <!-- Case 1 -->
                 <div class="case-card">
-                    <img src="/api/placeholder/400/300" alt="E-commerce Fashion Store" class="case-logo">
+                    <img src="kings.png" alt="Marca Kings 3D" class="case-logo">
                     <div class="case-overlay">
-                        <h3>Fashion Store</h3>
-                        <p>Desenvolvimento de e-commerce completo com integração de pagamentos e logística.</p>
+                        <h3>Kings 3D</h3>
+                        <p>Desenvolvimento marca completa, design, site, rede-social.</p>
                         <a href="#" class="case-link">Ver projeto</a>
                     </div>
                 </div>
                 
                 <!-- Case 2 -->
                 <div class="case-card">
-                    <img src="/api/placeholder/400/300" alt="Campanha Digital TechSolutions" class="case-logo">
+                    <img src="empl.png" alt="EMPL" class="case-logo">
                     <div class="case-overlay">
-                        <h3>TechSolutions</h3>
+                        <h3>EMPL</h3>
                         <p>Estratégia de marketing digital que aumentou leads qualificados em 150%.</p>
                         <a href="#" class="case-link">Ver projeto</a>
                     </div>
@@ -1945,7 +1982,7 @@
                 
                 <!-- Case 3 -->
                 <div class="case-card">
-                    <img src="/api/placeholder/400/300" alt="Redes Sociais FoodDelivery" class="case-logo">
+                    <img src="kings.png" alt="Redes Sociais FoodDelivery" class="case-logo">
                     <div class="case-overlay">
                         <h3>FoodDelivery</h3>
                         <p>Gestão de redes sociais com crescimento de 200% em engajamento orgânico.</p>
